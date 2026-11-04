@@ -1,0 +1,58 @@
+<application>
+  <component name="MavenIndices">
+    <option name="MAVEN_INDICES_DATA">
+      <map>
+        <entry key="$MAVEN_REPOSITORY$">
+          <value>
+            <MavenIndexData>
+              <option name="dataDir" value="$USER_HOME$/.cache/JetBrains/IdeaIC2024.1/Maven/Indices/repository-e45a06c5" />
+              <option name="id" value="repository-e45a06c5" />
+              <option name="repoId" value="local" />
+              <option name="url" value="$MAVEN_REPOSITORY$" />
+            </MavenIndexData>
+          </value>
+        </entry>
+        <entry key="https://adad-185849290566.d.codeartifact.eu-west-3.amazonaws.com/maven/adad-maven-releases">
+          <value>
+            <MavenIndexData>
+              <option name="dataDir" value="$USER_HOME$/.cache/JetBrains/IdeaIC2024.1/Maven/Indices/adad-maven-releases-aa998168" />
+              <option name="id" value="adad-maven-releases-aa998168" />
+              <option name="repoId" value="codeartifact_release" />
+              <option name="url" value="https://adad-185849290566.d.codeartifact.eu-west-3.amazonaws.com/maven/adad-maven-releases" />
+            </MavenIndexData>
+          </value>
+        </entry>
+        <entry key="https://adad-185849290566.d.codeartifact.eu-west-3.amazonaws.com/maven/adad-maven-snapshots">
+          <value>
+            <MavenIndexData>
+              <option name="dataDir" value="$USER_HOME$/.cache/JetBrains/IdeaIC2024.1/Maven/Indices/adad-maven-snapshots-b19f3e93" />
+              <option name="id" value="adad-maven-snapshots-b19f3e93" />
+              <option name="repoId" value="codeartifact" />
+              <option name="url" value="https://adad-185849290566.d.codeartifact.eu-west-3.amazonaws.com/maven/adad-maven-snapshots" />
+            </MavenIndexData>
+          </value>
+        </entry>
+        <entry key="https://jitpack.io">
+          <value>
+            <MavenIndexData>
+              <option name="dataDir" value="$USER_HOME$/.cache/JetBrains/IdeaIC2024.1/Maven/Indices/jitpack_io-6a5dc75" />
+              <option name="id" value="jitpack_io-6a5dc75" />
+              <option name="repoId" value="jitpack.io" />
+              <option name="url" value="https://jitpack.io" />
+            </MavenIndexData>
+          </value>
+        </entry>
+        <entry key="https://repo.maven.apache.org/maven2">
+          <value>
+            <MavenIndexData>
+              <option name="dataDir" value="$USER_HOME$/.cache/JetBrains/IdeaIC2024.1/Maven/Indices/maven2-71a23c62" />
+              <option name="id" value="maven2-71a23c62" />
+              <option name="repoId" value="central" />
+              <option name="url" value="https://repo.maven.apache.org/maven2" />
+            </MavenIndexData>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</application>

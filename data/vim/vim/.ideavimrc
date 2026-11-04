@@ -1,0 +1,39 @@
+let mapleader = " "
+" line numbers
+set relativenumber
+set number
+set incsearch
+
+"Insert new lines
+nnoremap o o<ESC>
+nnoremap O O<ESC>
+
+"scrolling
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+"Move 1 more lines up or down in normal and visual modes
+nnoremap <C-Up> :m .-2<CR>==zz
+nnoremap <C-Down> :m .+1<CR>==zz
+vnoremap <C-Up> :m '<-2<CR>gv=gvzz
+vnoremap <C-Down> :m '>+1<CR>gv=gvzz
+
+"Place curson at the begining or at the end of line
+nnoremap I I<ESC>
+nnoremap A A<ESC>
+
+"centralize the search
+nnoremap n nzz
+nnoremap N Nzz
+
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" replace currently selected text with default register
+" without yanking it
+xnoremap <leader>p "_dP
+
+" Clipboard functionality 
+vnoremap  <leader>y "+y
+nnoremap  <leader>y "+y

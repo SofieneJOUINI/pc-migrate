@@ -1,0 +1,4 @@
+### Managed by the claude-desktop package.
+### Set CLAUDE_DESKTOP_ADD_REPO="true"|"false" in /etc/default/claude-desktop
+### to force this entry on or off; remove this file too when opting out.
+deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main

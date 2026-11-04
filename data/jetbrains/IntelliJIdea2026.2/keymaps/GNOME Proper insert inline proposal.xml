@@ -1,0 +1,5 @@
+<keymap version="1" name="GNOME Proper insert inline proposal" parent="Default for GNOME">
+  <action id="InsertInlineCompletionAction">
+    <keyboard-shortcut first-keystroke="right" />
+  </action>
+</keymap>

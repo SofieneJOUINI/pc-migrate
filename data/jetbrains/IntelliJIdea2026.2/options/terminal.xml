@@ -1,0 +1,15 @@
+<application>
+  <component name="BlockTerminalUsage">
+    <option name="blockTerminalUsedLastVersion" value="243.18137.10" />
+    <option name="feedbackNotificationShown" value="true" />
+    <shellToExecutedCommandsNumber>
+      <entry key="bash" value="2170" />
+    </shellToExecutedCommandsNumber>
+  </component>
+  <component name="TerminalOptionsProvider">
+    <option name="cursorShape" value="VERTICAL" />
+    <option name="terminalEngine" value="CLASSIC" />
+    <option name="useOptionAsMetaKey" value="true" />
+    <option name="useShellPrompt" value="true" />
+  </component>
+</application>

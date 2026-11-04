@@ -1,0 +1,14 @@
+<application>
+  <component name="PluginFreezes">
+    <option name="latestNotificationTime">
+      <map>
+        <entry key="IdeaVIM" value="2024-11-01T17:10:59.016900896Z" />
+      </map>
+    </option>
+    <option name="mutedPlugins">
+      <list>
+        <option value="true" />
+      </list>
+    </option>
+  </component>
+</application>

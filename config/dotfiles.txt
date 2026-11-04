@@ -1,0 +1,17 @@
+# Files under ~ captured by the dotfiles module.
+# Shell rc files (.bashrc, .bash_aliases, .profile, .zshrc, ...) have their secrets removed first.
+# Vim and Neovim files are handled by the vim module, not here.
+
+.bashrc
+.bash_aliases
+.bash_profile
+.profile
+.inputrc
+.dircolors
+.zshrc
+.zprofile
+.gitconfig
+.gitignore_global
+.tmux.conf
+.editorconfig
+.config/starship.toml

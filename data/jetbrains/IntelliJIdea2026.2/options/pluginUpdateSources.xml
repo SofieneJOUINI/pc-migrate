@@ -1,0 +1,12 @@
+<application>
+  <component name="PluginUpdateSources">
+    <sources>
+      <entry pluginId="IdeaVIM">
+        <updateSource host="https://plugins.jetbrains.com/plugins/eap/ideavim" isMarketplace="false" />
+      </entry>
+      <entry pluginId="com.anthropic.code.plugin">
+        <updateSource host="https://plugins.jetbrains.com/pluginManager" />
+      </entry>
+    </sources>
+  </component>
+</application>

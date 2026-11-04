@@ -1,0 +1,1 @@
+- [User owns commits and pushes](user-owns-commits-and-pushes.md) — never commit, create repos or push; leave it to the user

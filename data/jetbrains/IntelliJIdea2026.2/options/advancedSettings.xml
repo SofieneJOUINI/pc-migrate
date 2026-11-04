@@ -1,0 +1,10 @@
+<application>
+  <component name="AdvancedSettings">
+    <option name="settings">
+      <map>
+        <entry key="SecurityAnalysis.canShowProblemTab" value="false" />
+        <entry key="floating.codeToolbar.hide" value="true" />
+      </map>
+    </option>
+  </component>
+</application>

@@ -1,0 +1,14 @@
+<application>
+  <component name="GitLabAccounts"><![CDATA[{
+  "accounts": [
+    {
+      "id": "238e40b5-02cb-4564-9725-060a3d67c459",
+      "name": "sofiene-jouini",
+      "server": {
+        "uri": "https://gitlab.cicd.adad.io"
+      }
+    }
+  ]
+}]]></component>
+  <component name="GitLabSettings"><![CDATA[{}]]></component>
+</application>

@@ -1,0 +1,18 @@
+<application>
+  <component name="KeymapFlagsStorage">
+    <option name="keymapToDescriptor">
+      <map>
+        <entry key="GNOME Proper Redo">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="GNOME Proper insert inline proposal">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</application>

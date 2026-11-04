@@ -1,0 +1,9 @@
+<application>
+  <component name="CommonFeedbackSurveyService"><![CDATA[{
+  "feedbackSurveyToNumberNotificationShows": {
+    "new_terminal": 1,
+    "k2_feedback": 1,
+    "reworked_terminal": 1
+  }
+}]]></component>
+</application>

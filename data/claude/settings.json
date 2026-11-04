@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "claude-usage-meter-mod": {
+      "source": {
+        "source": "github",
+        "repo": "MnC-Aero/claude-usage-meter-plugin"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "usage-meter@claude-usage-meter-mod": true
+  }
+}

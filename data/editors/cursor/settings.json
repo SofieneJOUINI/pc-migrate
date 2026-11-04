@@ -1,0 +1,6 @@
+{
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme": "Cursor Dark Midnight",
+    "python.createEnvironment.trigger": "off",
+    "cursor.composer.queueMessageDefaultBehavior": "steer"
+}

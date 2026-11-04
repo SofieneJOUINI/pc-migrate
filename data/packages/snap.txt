@@ -1,0 +1,16 @@
+# name channel [classic]
+cups latest/stable 
+drawio latest/stable 
+firefox latest/stable 
+fx latest/stable 
+intellij-idea-community latest/stable classic
+kapman latest/stable 
+obsidian latest/stable classic
+onlyoffice-desktopeditors latest/stable 
+outlook-ew latest/stable 
+pgadmin4 latest/stable 
+postman v10/stable 
+redisinsight latest/stable 
+spotify latest/stable 
+teams-for-linux latest/stable 
+yq latest/stable 
