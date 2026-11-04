@@ -1,0 +1,154 @@
+#!/usr/bin/env bash
+# migrate: capture this machine into a git repo, and rebuild it on another one.
+set -euo pipefail
+
+REPO_DIR=$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)
+# shellcheck source=lib/common.sh
+. "$REPO_DIR/lib/common.sh"
+# shellcheck source=lib/bundle.sh
+. "$REPO_DIR/lib/bundle.sh"
+
+declare -A MODULE_DESC
+# Install order matters: packages first (curl, git, apt repos), node + python before vim
+# (Mason installs npm/pip based language servers), gnome last.
+MODULES=(packages dotfiles node python vim repos editors jetbrains claude apps gnome)
+for m in "${MODULES[@]}"; do
+  # shellcheck source=/dev/null
+  . "$REPO_DIR/modules/$m.sh"
+done
+
+usage() {
+  cat <<EOF
+Usage: migrate <command> [module...] [options]
+
+On the OLD machine
+  export [module...]        capture this machine into data/ (then commit + push)
+  bundle pack [FILE]        encrypt keys, credentials and fonts (config/bundle.txt) into one file
+  status [module...]        what changed here since the last export
+
+On the NEW machine
+  bundle unpack FILE        restore the encrypted bundle (do this first: it has your SSH key)
+  install [module...]       rebuild this machine from data/
+      --dry-run             show what would happen, change nothing
+      --yes                 don't ask before each module
+
+Anywhere
+  list                      modules and what they cover
+  scan [PATH...|--staged]   look for secrets (runs automatically before every commit)
+  test                      run the unit tests (tests/)
+  test docker [VERSION]     try an install on a throwaway Ubuntu in Docker (default 24.04)
+
+With no module names, every module runs.
+EOF
+}
+
+pick_modules() {
+  local m
+  if (($# == 0)); then printf '%s\n' "${MODULES[@]}"; return; fi
+  for m in "$@"; do
+    [[ -v MODULE_DESC[$m] ]] || die "unknown module '$m' (see: migrate list)"
+    echo "$m"
+  done
+}
+
+cmd_list() {
+  local m
+  for m in "${MODULES[@]}"; do printf '  %-10s %s\n' "$m" "${MODULE_DESC[$m]}"; done
+}
+
+cmd_export() {
+  local m
+  git -C "$REPO_DIR" config core.hooksPath hooks 2>/dev/null || true
+  for m in $(pick_modules "$@"); do
+    log "export $m"
+    "${m}_export" || warn "$m export finished with errors"
+  done
+  printf 'host\t%s\nuser\t%s\nhome\t%s\nos\t%s\nexported\t%s\n' "$(hostname)" "$USER" "$HOME" \
+    "$(lsb_release -ds 2>/dev/null)" "$(date -Iseconds)" > "$DATA_DIR/meta.txt"
+  log "secret scan"
+  if python3 "$REPO_DIR/lib/scan.py" "$DATA_DIR"; then ok "nothing found"; fi
+  echo
+  info "next: review with 'git -C $(tilde "$REPO_DIR") diff', commit, push; then './migrate bundle pack'"
+}
+
+cmd_install() {
+  local yes=0 mods=() m
+  for a in "$@"; do
+    case $a in
+      --dry-run) DRY_RUN=1 ;;
+      --yes|-y) yes=1 ;;
+      -*) die "unknown option $a" ;;
+      *) mods+=("$a") ;;
+    esac
+  done
+  [[ -d $DATA_DIR ]] || die "no data/ yet: run './migrate export' on the old machine first"
+  [[ -f $DATA_DIR/meta.txt ]] && info "data exported from $(awk -F'\t' '$1=="host"{h=$2} $1=="exported"{e=$2} END{print h " on " e}' "$DATA_DIR/meta.txt")"
+  [[ $DRY_RUN == 1 ]] || info "files that get replaced are backed up to $(tilde "$BACKUP_DIR")"
+  for m in $(pick_modules "${mods[@]}"); do
+    log "install $m: ${MODULE_DESC[$m]}"
+    if [[ $DRY_RUN == 0 && $yes == 0 ]]; then
+      read -rp "  run it? [Y/n/q] " ans </dev/tty
+      case ${ans,,} in n*) continue ;; q*) exit 0 ;; esac
+    fi
+    "${m}_install" || warn "$m finished with errors"
+  done
+  log "done"
+  [[ $DRY_RUN == 1 ]] || info "open a new terminal to pick up the shell config"
+}
+
+cmd_status() {
+  local tmp m
+  tmp=$(mktemp -d)
+  # Export into a scratch copy, then diff against what is committed.
+  cp -a "$DATA_DIR/." "$tmp/" 2>/dev/null || true
+  for m in $(pick_modules "$@"); do
+    DATA_DIR=$tmp SECRETS_TEMPLATE=$tmp/dotfiles/secrets.env.template "${m}_export" >/dev/null 2>&1 || true
+  done
+  local changes
+  changes=$(diff -rq "$DATA_DIR" "$tmp" 2>/dev/null | grep -v 'meta\.txt' |
+    sed -e "s|$DATA_DIR/||g" -e "s|$tmp/||g" -e 's/^Files \(.*\) and .* differ$/  changed  \1/' \
+        -e "s|^Only in $tmp\(.*\): \(.*\)|  new      \1/\2|" -e "s|^Only in $DATA_DIR\(.*\): \(.*\)|  removed  \1/\2|" || true)
+  if [[ -z $changes ]]; then
+    ok "in sync with the last export"
+  else
+    log "changed on this machine since the last export"
+    echo "$changes"
+    for f in packages/apt.txt packages/snap.txt editors/code/extensions.txt editors/cursor/extensions.txt \
+             node/npm-global.txt vim/nvim/plugins.lock vim/nvim/mason.lock repos/repos.tsv; do
+      [[ -f $tmp/$f && -f $DATA_DIR/$f ]] || continue
+      diff <(lines "$DATA_DIR/$f") <(lines "$tmp/$f") | sed -n 's/^> /    + /p; s/^< /    - /p' | sed "s|^|$f |" | sed 's/^/  /'
+    done
+    info "run './migrate export' to capture them"
+  fi
+  rm -rf "$tmp"
+}
+
+cmd_test() {
+  case ${1:-unit} in
+    unit)   python3 -m unittest discover -s "$REPO_DIR/tests" -t "$REPO_DIR" -q ;;
+    docker) shift; "$REPO_DIR/tests/docker-install.sh" "$@" ;;
+    *) die "usage: migrate test [unit | docker [UBUNTU_VERSION]]" ;;
+  esac
+}
+
+main() {
+  local cmd=${1:-help}; shift || true
+  case $cmd in
+    export)  cmd_export "$@" ;;
+    install) cmd_install "$@" ;;
+    status)  cmd_status "$@" ;;
+    list)    cmd_list ;;
+    scan)    python3 "$REPO_DIR/lib/scan.py" "$@" ;;
+    test)    cmd_test "$@" ;;
+    bundle)
+      case ${1:-} in
+        pack)   shift; bundle_pack "$@" ;;
+        unpack) shift; bundle_unpack "$@" ;;
+        *) die "usage: migrate bundle pack [FILE] | unpack FILE" ;;
+      esac ;;
+    help|-h|--help) usage ;;
+    *) usage; exit 1 ;;
+  esac
+}
+
+main "$@"

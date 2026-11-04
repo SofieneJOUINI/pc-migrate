@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '{{JAVA_VERSION}}'
+          distribution: 'temurin'
+          cache: maven
+      - name: Unit, contract and E2E tests (Testcontainers) + coverage
+        run: mvn -B -ntp verify

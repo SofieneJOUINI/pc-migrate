@@ -1,0 +1,25 @@
+<application>
+  <component name="AcpAgentSettings">
+    <option name="agent_auth">
+      <map>
+        <entry key="acp.registry.cursor" value="MANAGED_EXTERNALLY" />
+      </map>
+    </option>
+    <option name="agent_config_options">
+      <map>
+        <entry key="acp.registry.cursor">
+          <value>
+            <AgentConfigOptionsState>
+              <option name="values">
+                <map>
+                  <entry key="mode" value="agent" />
+                  <entry key="model" value="claude-opus-4-6[thinking=true,context=200k,effort=high]" />
+                </map>
+              </option>
+            </AgentConfigOptionsState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</application>

@@ -1,0 +1,8 @@
+# Never commit the encrypted bundle or anything holding secret values.
+*.gpg
+*.tar.gz
+.secrets.env
+secrets.env
+*.pem
+id_rsa*
+*.kdbx

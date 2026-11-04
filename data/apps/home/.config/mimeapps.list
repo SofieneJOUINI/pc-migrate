@@ -1,0 +1,32 @@
+[Added Associations]
+application/vnd.debian.binary-package=snap-store_ubuntu-software-local-file.desktop;gnome-software-local-file.desktop;
+application/x-x509-ca-cert=org.gnome.gedit.desktop;
+inode/directory=intellij-idea-community_intellij-idea-community.desktop;
+text/plain=sublime_text.desktop;vlc.desktop;onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop;google-chrome.desktop;drawio_drawio.desktop;libreoffice-calc.desktop;notepad-plus-plus_notepad-plus-plus.desktop;
+text/csv=sublime_text.desktop;onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop;libreoffice-calc.desktop;
+application/sql=sublime_text.desktop;
+application/pdf=google-chrome.desktop;
+application/wps-office.xlsx=libreoffice-calc.desktop;wps-office-et.desktop;
+text/x-log=sublime_text.desktop;
+application/x-yaml=sublime_text.desktop;
+application/wps-office.docx=sublime_text.desktop;
+text/markdown=sublime_text.desktop;
+video/mp4=vlc.desktop;
+video/x-matroska=vlc.desktop;
+application/json=sublime_text.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=onlyoffice-desktopeditors_onlyoffice-desktopeditors.desktop;
+message/rfc822=thunderbird.desktop;
+text/html=brave-browser.desktop;sublime_text.desktop;
+
+[Default Applications]
+text/html=freelens.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+text/plain=libreoffice-calc.desktop
+application/sql=sublime_text.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/freelens=freelens.desktop

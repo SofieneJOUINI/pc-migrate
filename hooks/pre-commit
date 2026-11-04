@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Refuse commits that contain secrets. Enabled by './migrate export' (git config core.hooksPath hooks).
+exec python3 "$(git rev-parse --show-toplevel)/lib/scan.py" --staged

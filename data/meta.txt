@@ -1,0 +1,5 @@
+host	sofienejouini-Latitude-5530
+user	sofienejouini
+home	/home/sofienejouini
+os	Ubuntu 22.04.5 LTS
+exported	2026-11-04T15:03:24+01:00

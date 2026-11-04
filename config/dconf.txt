@@ -1,0 +1,19 @@
+# GNOME settings trees (dconf paths) captured by the gnome module.
+# Keep this to settings you chose: dumping / would also carry app state and caches.
+
+/org/gnome/settings-daemon/plugins/media-keys/
+/org/gnome/settings-daemon/plugins/power/
+/org/gnome/desktop/wm/
+/org/gnome/desktop/interface/
+/org/gnome/desktop/input-sources/
+/org/gnome/desktop/peripherals/
+/org/gnome/desktop/app-folders/
+/org/gnome/desktop/search-providers/
+/org/gnome/desktop/screensaver/
+/org/gnome/desktop/session/
+/org/gnome/desktop/sound/
+/org/gnome/mutter/
+/org/gnome/shell/
+/org/gnome/terminal/legacy/
+/org/gnome/nautilus/preferences/
+/org/gnome/gedit/preferences/

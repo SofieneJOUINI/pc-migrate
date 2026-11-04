@@ -1,0 +1,2 @@
+- [No commit/push without permission](no-commit-push-without-permission.md) — always ask before git commit or git push
+- [Few plain comments](few-plain-comments.md) — comment only when needed, plain words, no symbols

@@ -1,0 +1,10 @@
+<application>
+  <component name="FileTypeManager" version="19">
+    <extensionMap>
+      <mapping pattern="GL_usecase13" type="AUTO_DETECTED" />
+      <mapping pattern="GL_usecase14" type="AUTO_DETECTED" />
+      <mapping pattern="mcp.json" type="JSON5" />
+      <mapping ext="fil" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>

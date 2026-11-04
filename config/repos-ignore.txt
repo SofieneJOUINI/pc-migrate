@@ -1,0 +1,22 @@
+# Folders under ~ the repos module never looks in for git clones.
+# Tool caches, plugin managers' checkouts, and things other modules already handle.
+
+.cache
+.local/share
+.npm
+.nvm
+.cargo
+.rustup
+go/pkg
+snap
+node_modules
+.m2/repository
+.gradle
+.vscode
+.cursor
+.tmux/plugins
+pc-migrate
+
+# handled by the vim module
+.vim
+.config/nvim

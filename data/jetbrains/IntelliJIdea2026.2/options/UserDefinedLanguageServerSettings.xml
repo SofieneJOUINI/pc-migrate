@@ -1,0 +1,116 @@
+<application>
+  <component name="UserDefinedLanguageServerSettingsState">
+    <state>
+      <map>
+        <entry key="bbef4f24-a2eb-4814-ab78-de04e9f8c51a">
+          <value>
+            <UserDefinedLanguageServerItemSettings>
+              <option name="commandLine" value="java -jar $USER_HOME$/.lsp4ij/lsp/camel-lsp-server/camel-lsp-server-1.31.0.jar" />
+              <option name="installAlreadyDone" value="true" />
+              <option name="installerConfigurationContent" value="{&#10;  &quot;id&quot;: &quot;camel-lsp-server&quot;,&#10;  &quot;name&quot;: &quot;Camel Language Server&quot;,&#10;  &quot;executeOnStartServer&quot;: false,&#10;  &quot;check&quot;: {&#10;    &quot;exec&quot;: {&#10;      &quot;name&quot;: &quot;Trying current command&quot;,&#10;      &quot;command&quot;: &quot;${server.command}&quot;,&#10;      &quot;timeout&quot;: 2000&#10;    }&#10;  },&#10;  &quot;run&quot;: {&#10;    &quot;download&quot;: {&#10;      &quot;name&quot;: &quot;Download Camel Language Server&quot;,&#10;      &quot;maven&quot;: {&#10;        &quot;groupId&quot;: &quot;com.github.camel-tooling&quot;,&#10;        &quot;artifactId&quot;: &quot;camel-lsp-server&quot;&#10;      },&#10;      &quot;url&quot;: &quot;https://repo1.maven.org/maven2/com/github/camel-tooling/camel-lsp-server/1.31.0/camel-lsp-server-1.31.0.jar&quot;,&#10;      &quot;output&quot;: {&#10;        &quot;dir&quot;: &quot;$USER_HOME$/.lsp4ij/lsp/camel-lsp-server&quot;&#10;      },&#10;      &quot;onSuccess&quot;: {&#10;        &quot;configureServer&quot;: {&#10;          &quot;name&quot;: &quot;Configure Camel Language Server command&quot;,&#10;          &quot;command&quot;: &quot;java -jar ${output.dir}/${output.file.name}&quot;,&#10;          &quot;update&quot;: true&#10;        }&#10;      }&#10;    }&#10;  }&#10;}&#10;" />
+              <option name="serverId" value="bbef4f24-a2eb-4814-ab78-de04e9f8c51a" />
+              <option name="serverName" value="Camel Language Server" />
+              <option name="serverUrl" value="https://github.com/redhat-developer/lsp4ij/tree/main/docs/user-defined-ls/camel-lsp-server.md" />
+              <option name="templateId" value="camel-lsp-server" />
+              <option name="mappings">
+                <ServerMappingSettings language="JAVA" languageId="java" />
+                <ServerMappingSettings languageId="xml">
+                  <fileType>
+                    <FileTypeSettings name="XML" />
+                  </fileType>
+                </ServerMappingSettings>
+                <ServerMappingSettings languageId="java">
+                  <fileType>
+                    <FileTypeSettings name="JAVA" />
+                  </fileType>
+                </ServerMappingSettings>
+                <ServerMappingSettings languageId="properties">
+                  <fileType>
+                    <FileTypeSettings name="Properties" />
+                  </fileType>
+                </ServerMappingSettings>
+                <ServerMappingSettings languageId="yaml">
+                  <fileType>
+                    <FileTypeSettings name="YAML" />
+                  </fileType>
+                </ServerMappingSettings>
+                <ServerMappingSettings languageId="xml">
+                  <option name="fileNamePatterns">
+                    <list>
+                      <option value="*.xml" />
+                    </list>
+                  </option>
+                  <fileType>
+                    <FileTypeSettings>
+                      <option name="patterns">
+                        <option value="*.xml" />
+                      </option>
+                    </FileTypeSettings>
+                  </fileType>
+                </ServerMappingSettings>
+                <ServerMappingSettings languageId="java">
+                  <option name="fileNamePatterns">
+                    <list>
+                      <option value="*.java" />
+                    </list>
+                  </option>
+                  <fileType>
+                    <FileTypeSettings>
+                      <option name="patterns">
+                        <option value="*.java" />
+                      </option>
+                    </FileTypeSettings>
+                  </fileType>
+                </ServerMappingSettings>
+                <ServerMappingSettings languageId="properties">
+                  <option name="fileNamePatterns">
+                    <list>
+                      <option value="*.properties" />
+                    </list>
+                  </option>
+                  <fileType>
+                    <FileTypeSettings>
+                      <option name="patterns">
+                        <option value="*.properties" />
+                      </option>
+                    </FileTypeSettings>
+                  </fileType>
+                </ServerMappingSettings>
+                <ServerMappingSettings languageId="spring-boot-properties">
+                  <option name="fileNamePatterns">
+                    <list>
+                      <option value="application.properties" />
+                    </list>
+                  </option>
+                  <fileType>
+                    <FileTypeSettings>
+                      <option name="patterns">
+                        <option value="application.properties" />
+                      </option>
+                    </FileTypeSettings>
+                  </fileType>
+                </ServerMappingSettings>
+                <ServerMappingSettings languageId="yaml">
+                  <option name="fileNamePatterns">
+                    <list>
+                      <option value="*.yaml" />
+                      <option value="*.yml" />
+                    </list>
+                  </option>
+                  <fileType>
+                    <FileTypeSettings>
+                      <option name="patterns">
+                        <option value="*.yaml" />
+                        <option value="*.yml" />
+                      </option>
+                    </FileTypeSettings>
+                  </fileType>
+                </ServerMappingSettings>
+              </option>
+            </UserDefinedLanguageServerItemSettings>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</application>

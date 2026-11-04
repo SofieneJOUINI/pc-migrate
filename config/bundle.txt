@@ -1,0 +1,23 @@
+# Paths (relative to ~) that go into the encrypted bundle instead of git:
+# secrets, credentials, and anything too big for a repo.
+# Passwords removed from your dotfiles are NOT stored anywhere: see data/dotfiles/secrets.env.template.
+
+# SSH and server keys
+.ssh
+keys
+
+# Cloud, cluster and registry credentials
+.aws
+.kube
+.docker/config.json
+.m2/settings.xml
+.npmrc
+.git-credentials
+.pgpass
+.config/gh
+
+# Password database
+Documents/Settings/Passwords.kdbx
+
+# Large files
+.local/share/fonts

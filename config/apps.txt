@@ -1,0 +1,12 @@
+# Per-app config (files or folders under ~) captured by the apps module.
+# Add a line here to bring another app's settings along.
+
+.config/flameshot
+.config/keepassxc
+.config/htop
+.config/parcellite
+.config/sublime-text/Packages/User
+.config/obs-studio/basic
+.config/mimeapps.list
+.config/autostart
+.config/user-dirs.dirs

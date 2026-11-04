@@ -1,0 +1,13 @@
+claude-code-jetbrains-plugin
+github-copilot-intellij
+IdeaVIM
+intellij-openapi
+jhipster-plugin
+lsp4ij
+macOSKeymap
+ml-llm
+python
+python-ce
+vcs-hg
+vcs-perforce
+vcs-svn
